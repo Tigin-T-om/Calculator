@@ -1,32 +1,100 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #09102a;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-
 }
 
 .calculator {
     background-color: #ffffff;
     border-radius: 10px;
-    bpx-shadow: 0px 4px rgba(0,0,0,0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     width: 320px;
-    padding 20px;
+    padding: 20px;
 }
 
 .display {
     font-size: 24px;
-    background-color: @222;
+    background-color: #222;
     color: #fff;
     text-align: right;
-    paddimg : 15px;
-    margin: bottom 20px;
-    border-radius:5px;
-    min hegiht: 60px;
-    overflow-X auto;
-    word-warp:break-word;
-    border: 1px solid-radius
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    min-height: 60px;
+    line-height: 1.5;
+    overflow-x: auto;
+    word-wrap: break-word;
+    border: 1px solid #444;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    user-select: none;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+.btn:nth-child(4n) {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn:nth-child(4n):hover {
+    background-color: #45a049;
+}
+
+.btn:nth-last-child(-n+4):hover {
+    background-color: #FF5722;
+    color: white;
+}
+
+/* Clear button styling */
+.btn:nth-child(15) {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn:nth-child(15):hover {
+    background-color: #e53935;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .calculator {
+        width: 95%;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .display {
+        font-size: 20px;
+        padding: 10px;
+    }
 }
